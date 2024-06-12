@@ -10,14 +10,14 @@ enum class icon
 	normal,
 	poker_face
 };
-class InvalidInputStyle : public std::exception {
+class InvalidInputStyle : public std::exception { //处理异常输入
 public:
     const char* what() const throw() 
 	{
         return "Invalid input style";
     }
 };
-class InvalidInputIcon : public std::exception {
+class InvalidInputIcon : public std::exception { //处理异常输入
 public:
     const char* what() const throw() 
 	{
@@ -63,15 +63,15 @@ class Container
 		icon ic;
 		vector<JsonNode> nodes;
 };
-class Builder 
+class Builder  //抽象工厂
 {
 	public:
 	    Builder() {}
 	    virtual ~Builder() = default ;
 	    virtual void draw(Container con) = 0;
 };
-
-class TreeBuilder : public Builder 
+//两种风格的工厂
+class TreeBuilder : public Builder  
 {
 	public:
 	    TreeBuilder() {}
