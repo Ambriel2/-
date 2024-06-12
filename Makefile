@@ -13,7 +13,7 @@ $(EXECUTABLE): $(OBJECTS)
 	$(CC) $(OBJECTS) -o $@
 
 main.o: main.cpp fje.hpp
-	$(CC) $(CFLAGS) FJE.cpp
+	$(CC) $(CFLAGS) main.cpp
 
 fje.o: fje.cpp fje.hpp
 	$(CC) $(CFLAGS) fje.cpp
